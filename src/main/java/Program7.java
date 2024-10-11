@@ -1,30 +1,41 @@
-package src.main.java;
 //import stuff here
+import java.util.Scanner;
+
 
 //Your code here
-
-public class Program7{
-	//Define your final variables here
-	// **HINT: Maybe the conversion rates?????**
-
-
-	public static void main(String[] args){
-		//Make you own test code here
-		Program7 tester = new Program7();
-		
-		double myTestVal = 0.0;
-		
-		myTestVal = tester.convertMoney(0,0,0);
-		
-		System.out.println(myTestVal);
-	}
-	
-	
-	
-	public double convertMoney(int schruteBucks, int stanleyNickels, int klevins){
-		//implement a function that converts from the old format to the new format
-		
-	}
-	
-	
+public class Program7 {
+    public static void main(String[] args) {
+        int schruteBucks = 0;
+        int klevins = 0;
+        int stanleyNickels = 0;
+        
+        Scanner currencyInput = new Scanner(System.in);
+        
+        System.out.println("Enter schrute-bucks: ");
+        schruteBucks = currencyInput.nextInt();
+        
+        System.out.println("Enter klevins: ");
+        klevins = currencyInput.nextInt();
+        
+        System.out.println("Enter stanleyNickels: ");
+        stanleyNickels = currencyInput.nextInt();
+        
+        int totalSN = klevins * 12 + stanleyNickels;
+        double decimalSB = schruteBucks + Math.round(totalSN * 100.0/240.0)/100.0;
+        
+        System.out.println("Decimal schrute-bucks = " + decimalSB);
+        
+    }
+    
 }
+//Paste console output below:
+/*
+Enter schrute-bucks: 
+7
+Enter klevins: 
+17
+Enter stanleyNickels: 
+9
+Decimal schrute-bucks = 7.89
+
+*/
